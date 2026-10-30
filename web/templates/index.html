@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Structure Validator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="hero">
+        <nav class="page-nav">
+          <a href="/help">Help</a>
+        </nav>
+        <h1>HTML Structure Validator</h1>
+        <p>Walk a DOM tree with visitors and compare parent/child tags against a YAML manifest.</p>
+      </header>
+
+      <section class="panel">
+        <div class="toolbar">
+          <label class="field-label" for="manifest">Manifest</label>
+          <select id="manifest"></select>
+          <button type="button" class="btn secondary" id="btn-valid">Load valid sample</button>
+          <button type="button" class="btn secondary" id="btn-invalid">Load invalid sample</button>
+        </div>
+        <label class="field-label" for="html-input">HTML</label>
+        <textarea id="html-input" spellcheck="false" rows="14"></textarea>
+        <button type="button" class="btn primary" id="btn-analyze">Analyze structure</button>
+        <p id="error-text" class="error" hidden></p>
+      </section>
+
+      <div class="results">
+        <section class="panel" id="status-panel" hidden>
+          <p id="status-line" class="status-line"></p>
+        </section>
+        <section class="panel" id="catalog-panel" hidden>
+          <h2>Tag catalog</h2>
+          <pre id="catalog-out" class="code-block"></pre>
+        </section>
+        <section class="panel" id="problems-panel" hidden>
+          <h2>Manifest violations</h2>
+          <pre id="problems-out" class="code-block"></pre>
+        </section>
+      </div>
+    </main>
+    <script src="/static/session-persist.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Help — HTML Structure Validator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="layout help">
+      <nav class="page-nav"><a href="/">Back</a></nav>
+      <h1>Help</h1>
+      <p>
+        Paste HTML and choose a manifest. The <strong>Catalog</strong> visitor records which element
+        types appear under each parent. The <strong>Check</strong> visitor flags child tags that are
+        not listed in the manifest for that parent.
+      </p>
+      <p>
+        <strong>Report sections</strong> expects <code>body → section → (h1, p, ul)</code>.
+        <strong>Simple page</strong> allows direct <code>h1/p/ul</code> under <code>body</code>.
+      </p>
+    </main>
+  </body>
+</html>
